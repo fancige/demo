@@ -9,7 +9,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 import com.fancige.manager.FileManager;
 
-public class Set extends SimpleTagSupport {
+public class Setting extends SimpleTagSupport {
 	private String page;
 
 	public void setPage(String page) {

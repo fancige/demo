@@ -5,7 +5,7 @@
   <short-name>locale</short-name>
   <tag>
     <name>set</name>
-    <tag-class>com.fancige.tag.Set</tag-class>
+    <tag-class>com.fancige.tag.Setting</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <name>page</name>
