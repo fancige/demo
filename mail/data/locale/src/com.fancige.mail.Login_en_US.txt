@@ -1,6 +1,6 @@
 ﻿##############
-1=Auth code error
-2=Username or Password can not be empty
+1=Invalid auth code
+2=Username or password can not be empty
 3=Unsupported mail provider
-4=Sign in failed
-5=Username or Password error
+4=Authentication failed
+5=Invalid username or password
