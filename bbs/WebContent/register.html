@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fancige社区—注册</title>
+<link rel="stylesheet" type="text/css" href="css/whole.css">
+<link rel="stylesheet" type="text/css" href="css/register.css"> 
+<script type="text/javascript" src="js/query.js"></script>
+<script type="text/javascript">
+		
+	
+	function tip(index, content, color){
+		
+		get("div.tip")[index].innerHTML = content;
+		get("div.tip")[index].style.color = color;
+	};
+	
+	function getCode(){
+		
+		get("img.code")[0].src = "vcode?random=" + Math.random();
+	};
+
+	function check(index,type,min,max,count){
+		
+		var val = get("input")[index].value;
+
+		if(val.length == 0){
+			
+			tip(index,type + "不能为空！", "red");
+			
+		}else if(val.length < min){
+			 
+			tip(index,type + "最少" + min + "个字符！！", "red");
+			
+		}else if(val.length > max){
+			
+			tip(index,type + "最多" + max + "个字符！", "red");
+			
+		}else{
+			
+			var regExp = new RegExp("[A-z]","g");
+			while(regExp.test(val)){
+				
+				count ++;
+			}
+			regExp.compile("[0-9]","g");
+			var numCount = 0;
+			while(regExp.test(val)){
+				
+				count++;
+				numCount++;
+			}
+			
+			if(count != val.length){
+				
+				tip(index,type + "不能包含其它字符！", "red");
+				
+			}else if(index == 0 && numCount == val.length){
+				
+				tip(0, "用户名不能全为数字！", "red");
+			}else{
+				
+				if(index == 0){
+					
+					ajax("GET", "register?param=username&username=" + val, true, "", function(result){
+
+						if(result == "true"){
+							
+							tip(0,"用户名已存在！", "red");
+							
+						}else{
+							
+							tip(0,"用户名可用！", "green");
+						}
+					});
+					
+					return;
+				}else{
+					
+					tip(index,"", "black");
+					return true;
+				}
+			}
+		}
+		return false;
+	};
+
+	function result(index){
+		
+		switch (index){
+		
+		case 0:
+			var count = 0;
+			var val = get("input")[0].value;
+			var regExp = new RegExp("[\u4E00-\u9FA5]","g");						
+			while(regExp.test(val)){
+				
+				count ++;
+			}
+			check(0, "用户名", 3, 10, count);
+			break;
+			
+		case 1:
+			
+			return check(1, "密码", 6, 15, 0);
+			break;
+			
+		case 2:
+
+			if(check(1, "密码", 6, 15, 0)){
+				
+				var val1 = get("input")[1].value;
+				var val2 = get("input")[2].value;
+				
+				if(val1.length == val2.length){
+					
+					for(var i = 0; i < val1.length; i++){
+						
+						if(val1.charAt(i) != val2.charAt(i)){
+							
+							tip(2,"两次密码不一样！", "red");
+							return false;
+						}
+					}
+					tip(2, "", "black");
+					return true;
+				}else{
+					
+					tip(2,"两次密码不一样！", "red");
+					return false;
+				}
+			}
+			break;
+			
+		case 3:
+			tip(3, "验证码错误！", "red");
+			break;
+		}
+	};
+	
+	function username(){
+		
+		get("input")[0].onfocus = function(){
+			
+			tip(0,"你的社区名字，长度3-10个字符，可用<br>数字(不能全为数字)，字母（不区分<br>大小写），汉字。", "black");
+		};
+		
+		get("input")[0].onblur = function(){
+			
+			result(0);
+		};
+	};
+	
+	function password(){
+		
+		get("input")[1].onfocus = function(){
+			
+			tip(1,"密码长度6-15个字符，只能包含数字<br>和字母（区分大小写）。","black");
+		};
+	
+		get("input")[1].onblur = function(){
+			
+			result(1);
+		};
+	};
+	
+	function repassword(){
+
+		get("input")[2].onfocus = function(){
+			
+			if(check(1, "密码", 6, 15, 0)){
+				
+				tip(2,"再输一次密码。", "black");
+			}else{
+				
+				tip(2,"", "black");
+			}
+		};
+	
+		get("input")[2].onblur = function(){
+			
+			result(2);
+		};
+	};
+	
+	function code(){
+		
+		get("input")[3].onfucus = function(){
+			
+			tip(3,"", "black");
+		};
+		get("a.code")[0].onclick = getCode;
+		getCode();
+	};
+	
+	function submit(){
+		
+		get("#submit").onclick = function(){
+			
+			if(result(1) && result(2)){
+				
+				get("#submit").innerHTML = "请稍后";
+				ajax("POST", "register", false, "param=submit&username="
+						+ get("input")[0].value
+						+ "&password=" + get("input")[1].value 
+						+ "&code=" + get("input")[3].value, function(r){
+
+					if(r == "success"){
+						
+						get("#ok").onclick = function(){
+							
+							get("#bg").style.display = "none";
+							get("#dg").style.display = "none";
+							location.href = "home.jsp";
+						};
+						get("#no").onclick = function(){
+							
+							location.reload(true);
+							get("#bg").style.display = "none";
+							get("#dg").style.display = "none";
+						};
+						tip(3,"", "black");
+						get("#bg").style.display = "inherit";
+						get("#dg").style.display = "inherit";
+						
+					}else{
+						
+						if(r == "code"){
+							result(3);
+							getCode();
+						}
+						result(0);
+					}
+					get("#submit").innerHTML = "立即注册";
+				});
+			}
+		}
+	}
+	function load(){
+		
+		username();
+		password();
+		repassword();
+		code();
+		submit();
+	}
+		
+</script>
+
+</head>
+<body onload="load();">
+	<div class="body">
+		<div id="bg"></div>
+		<div id="dg">
+			<img src="image/o.jpg"><font id="f1">注册成功！</font><br><br>
+			请务必牢记你的用户名和密码，进入个人中心后及时补全个人资料。<br><br>
+			点击“确定”跳转到个人中心。<br><br><br>
+			<button id="ok">确定</button><button id="no">取消</button>
+		</div>
+		<a class="logo">fancige社区</a>
+		<p class="a">
+			<a href="login.html">登录</a>&nbsp;
+			<a href="home.jsp">个人中心</a>
+		</p>
+		<div class="panel"><br>
+			<p class="logo">注册社区账户</p><br>
+			<div class="form">
+				<div class="tip"></div><p>&#12288;用户名：<input type="text" class="long"></p>
+				<div class="tip"></div><p>&#12288;&#12288;密码：<input type="password" class="long"></p>
+				<div class="tip"></div><p>确认密码：<input type="password" class="long"></p>
+				<div class="tip"></div><p>&#12288;验证码：<input type="text" class="short">&#12288;
+				<img class="code">&#12288;<a class="code">换一张</a></p>
+				<button id="submit">立即注册</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

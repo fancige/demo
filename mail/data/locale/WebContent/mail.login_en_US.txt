@@ -1,0 +1,6 @@
+﻿##################
+lc_1=Sign in
+lc_2=Username
+lc_3=Password
+lc_4=Auth Code
+lc_5=Sign in

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>信息熵分类</title>
+<style type="text/css">
+body {
+	margin: 0;
+	z-index: 0;
+	min-width: 1000px;
+}
+
+a {
+	color: gray;
+	text-decoration: none;
+}
+
+a:HOVER {
+	text-decoration: underline;
+}
+
+button {
+	color: gray;
+	background: white;
+	border: 1px gray solid;
+	height: 28px;
+	width: 60px;
+}
+
+button:HOVER {
+	border-color: black;
+	color: black;
+}
+
+#page1 input {
+	padding: 0px 5px;
+	width: 150px;
+	height: 30px;
+}
+
+.dialog {
+	z-index: 3;
+	text-align: center;
+	padding: 20px;
+	margin: 150px auto;
+	background: white;
+}
+
+.dialogParent {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+
+.background {
+	background: black;
+	position: fixed;
+	opacity: 0.5;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+</style>
+
+<script src="common.js" type="text/javascript"></script>
+<script src="InfoEntropy.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="body" style="margin: 40px;">
+		<p>
+			<b style="font-size: 30px;">信息熵分类</b><a href="../huffman/huffman.html"
+				style="margin-left: 100px;">赫夫曼编码</a>
+		</p>
+		<div id="topPanel" style="margin-bottom: 30px">
+			<button id="sample">例题</button>
+		</div>
+		<div id="page1">
+			<p>
+				<b>第一步，新建一个表格：</b>
+			</p>
+			<p>
+				行数：<input type="text" id="row" placeHolder="输入一个自然数">
+			</p>
+			<p>
+				列数：<input type="text" id="col" placeHolder="输入一个自然数">
+			</p>
+			<p>
+				<button style="margin-left: 50px" id="submit1">提交</button>
+			</p>
+		</div>
+		<div id="page2" style="display: none;">
+			<p>
+				<b>第二步，填入数据：</b>
+			</p>
+			<p>1：空缺的位置将使用默认值。行列名默认值为序号，数据项默认值为0</p>
+			<p>2：除了行列名外，其它位置必须全为自然数。</p>
+			<table id="inputTable"></table>
+			<p>
+				<button id="submit2">提交</button>
+			</p>
+		</div>
+		<div id="page3" style="display: none;">
+			<p>
+				<b>结果列表：</b>
+			</p>
+			<div id="result"></div>
+		</div>
+	</div>
+</body>
+</html>

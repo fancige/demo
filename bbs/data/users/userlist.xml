@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE userlist SYSTEM "userlist.dtd">
+<userlist>
+    <user>
+        <userid>111111</userid>
+        <username>fancige</username>
+        <password>123456</password>
+    </user>
+    <user>
+        <userid>734548</userid>
+        <username>wakada</username>
+        <password>123456</password>
+    </user>
+</userlist>

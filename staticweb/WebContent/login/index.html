@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript" src="index.js"></script>
+<style type="text/css">
+body {
+	margin: 0;
+	z-index: 0;
+	min-width: 1000px;
+}
+
+a {
+	color: gray;
+	text-decoration: none;
+}
+
+a:HOVER {
+	color: black;
+}
+
+button, input[type='button'] {
+	background: white;
+	border: 1px solid black;
+	padding: 5px 10px;
+}
+
+button:HOVER, input[type='button']:HOVER {
+	color: white;
+	background: black;
+}
+
+input, textarea {
+	padding: 5px;
+	outline: none;
+}
+
+#body {
+	margin: 50px 100px;
+}
+
+.link {
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+	<div id="body">
+		<h1>
+			<a href="index.html">首页</a>
+		</h1>
+		<div id="welcome" style="display: none">
+			<a href="index.html?#login" class="link">登录</a> <a
+				href="index.html?#register" class="link" style="margin-left: 20px;">注册</a>
+		</div>
+		<div id="login" style="display: none">
+			<h3>登录</h3>
+			<p>
+				<input type="text" placeholder="用户名">
+			</p>
+			<p>
+				<input type="password" placeholder="密码">
+			</p>
+			<p>
+				<input type="button" value="登录">
+			</p>
+		</div>
+		<div id="register" style="display: none">
+			<h3>注册</h3>
+			<p>
+				<input type="text" placeholder="用户名">
+			</p>
+			<p>
+				<input type="password" placeholder="密码">
+			</p>
+			<p>
+				<input type="password" placeholder="确认密码">
+			</p>
+			<p>
+				<input type="button" value="注册">
+			</p>
+		</div>
+	</div>
+</body>
+</html>

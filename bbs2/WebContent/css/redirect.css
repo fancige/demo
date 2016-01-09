@@ -1,0 +1,20 @@
+#dialog {
+	margin: 100px auto;
+	border: 2px green solid;
+	background: white;
+	width: 300px;
+	height: 90px;
+	text-align: center;
+}
+
+#p1 {
+	margin-top: 20px;
+}
+
+#dialog a {
+	color: green;
+}
+
+#count {
+	margin-right: 5px;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="posts">
+		<complexType>
+			<sequence>
+				<element name="userid" type="string"></element>
+				<element name="post" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="title" type="string"></element>
+							<element name="content" type="string"></element>
+							<element name="time" type="string"></element>
+						</sequence>
+						<attribute name="id" use="required" type="ID"></attribute>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

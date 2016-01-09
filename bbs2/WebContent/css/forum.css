@@ -1,0 +1,59 @@
+#forumCatalog #homepage {
+	color: white;
+	background: green;
+}
+
+#postPanel {
+	padding: 5px;
+	background: white;
+}
+
+#postPanel div {
+	height: 60px;
+	padding: 10px;
+}
+
+#postPanel a {
+	color: black;
+}
+
+#postPanel a:HOVER {
+	text-decoration: underline;
+}
+
+#postPanel a:VISITED {
+	color: gray;
+}
+
+#pageMenu {
+	text-align: center;
+	padding: 30px 5px;
+	background: white;
+}
+
+#pageMenu a {
+	color: gray;
+	border: 1px solid gray;
+	text-decoration: none;
+	margin-left: 5px;
+	padding: 3px 8px;
+}
+
+#pageMenu a:HOVER {
+	border-color: green;
+	background-color: green;
+	color: white;
+}
+
+#inputPage {
+	width: 40px;
+	height: 24px;
+	padding: 0 5px;
+	margin-left: 40px;
+}
+
+#btnPage {
+	width: 40px;
+	height: 26px;
+	position: absolute;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>赫夫曼编码</title>
+<script type="text/javascript" src="huffman.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+
+		var body = document.getElementById("body");
+		var input = document.getElementById("input");
+		var submit1 = document.getElementById("submit1");
+		var submit2 = document.getElementById("submit2");
+		var data = document.getElementById("data");
+
+		function enter() {
+
+			if (input.value > 0) {
+
+				var btn = document.createElement("button");
+				btn.style.margin = "10px";
+				btn.innerHTML = input.value;
+				btn.title = "点击删除";
+				btn.onclick = function() {
+					data.removeChild(this);
+				};
+				data.appendChild(btn);
+				input.value = "";
+
+			} else {
+
+				alert("数据必须大于0");
+			}
+		}
+
+		input.onkeypress = function(event) {
+
+			if (event.key.toLowerCase() == "enter") {
+				enter();
+			}
+		}
+
+		submit1.onclick = function() {
+			enter();
+		};
+
+		submit2.onclick = function() {
+
+			var btns = data.getElementsByTagName("button");
+			if (btns.length < 2) {
+				alert("至少要有两个数.")
+			} else {
+				var array = [];
+
+				for (var i = 0; i < btns.length; i++) {
+					array.push(parseInt(btns.item(i).innerHTML));
+				}
+				huffman(array);
+			}
+		};
+
+		submit3.onclick = function() {
+
+			var d = document.createElement("div");
+			d.style.width = "700px";
+			body.replaceChild(d, data);
+			data = d;
+		};
+	};
+</script>
+</head>
+<body>
+	<div id="body" style="padding: 30px;">
+		<p>
+			<b style="font-size: 30px;">赫夫曼编码</b><a href="../InfoEntropy/InfoEntropy.html"
+				style="margin-left: 100px;">信息熵分类</a>
+		</p>
+		<div style="margin-top: 50px;">
+			<input type="text" id="input" style="padding: 5px; width: 200px;">
+			<p>
+				<button id="submit1">录入数据</button>
+				<button id="submit2">开始编码</button>
+				<button id="submit3">清空数据</button>
+			</p>
+		</div>
+		<div id="data" style="width: 700px;"></div>
+		<div id="result">
+			<div id="huffmanRusultCode"></div>
+			<canvas id="huffmanRusultTree"></canvas>
+		</div>
+	</div>
+</body>
+</html>

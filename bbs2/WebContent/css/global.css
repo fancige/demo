@@ -1,0 +1,43 @@
+﻿html {
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	background-color: #F7F7F7;
+}
+
+a {
+	text-decoration: none;
+}
+
+#body {
+	width: 100%;
+	max-width: 1000px;
+	min-width: 600px;
+	margin: auto;
+}
+
+button {
+	background: green;
+	color: white;
+	border: none;
+	outline: none;
+	height: 30px;
+	padding: 0 10px;
+}
+
+button:Hover {
+	opacity: 0.8;
+}
+
+input, textarea {
+	padding: 8px;
+	border: 1px solid #DDDDDD;
+	font-size: 14px;
+	outline: none;
+}
+
+input:FOCUS, textarea:FOCUS {
+	border-color: green;
+}

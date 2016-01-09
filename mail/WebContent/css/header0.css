@@ -1,0 +1,45 @@
+#header0 {
+	top: 0;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+}
+
+#h0_header {
+	background: #222222;
+	padding: 5px 0px;
+	height: 30px;
+}
+
+#h0_logo {
+	color: white;
+	font-size: 25px;
+	margin-left: 25px;
+}
+
+#h0_imgSetting {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 25px;
+}
+
+#h0_divSetting {
+	background: #F7F7F7;
+	font-size: 13px;
+	padding: 10px 25px;
+	border-bottom: 1px solid #222222;
+}
+
+#h0_divSetting select {
+	padding: 0;
+}
+
+#h0_divSetting button {
+	background: #F7F7F7;
+	padding: 2px 5px;
+}
+
+#h0_divSetting button:HOVER {
+	background: black;
+}

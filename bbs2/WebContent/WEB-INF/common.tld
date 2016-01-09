@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+  version="2.1">
+  <tlib-version>1.0</tlib-version>
+  <short-name>common</short-name>
+
+  <tag>
+    <description>
+			Gets some posts and puts them into a special scope as a variable.
+		</description>
+    <name>post</name>
+    <tag-class>com.fancige.tag.PostTag</tag-class>
+    <body-content>empty</body-content>
+
+    <attribute>
+      <description>
+				Specifies different operations &lt;br&gt;
+				
+				Valid values: get, gets. &lt;br&gt;
+				
+				get: Gets only one post, the result is putting a com.fancige.bean.Post Object 
+				into the scope. &lt;br&gt;
+				
+				gets: Gets a group of posts, the result is putting a java.util.List Object 
+				into the scope. Note that you will get a group of posts 
+				instead of all matched posts, see the groupSize and groupIndex
+				attributes for more details. &lt;br&gt;
+				There are several variable set with this value: &lt;br&gt;
+				
+				currentIndex - the index of the group actually selected. &lt;br&gt;
+				maxIndex - the maximal group index that can be selected.
+			</description>
+      <name>type</name>
+      <required>true</required>
+    </attribute>
+
+    <attribute>
+      <description>
+				Valid values: page, request, session, application. &lt;br&gt;
+				Default: page.
+			</description>
+      <name>scope</name>
+    </attribute>
+
+    <attribute>
+      <name>filter</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>
+				The variable name.
+				Default: same as the value of the type attribute.
+			</description>
+      <name>var</name>
+    </attribute>
+
+    <attribute>
+      <description>
+				Each group contains several posts, you should specify which
+				group you want to get.  &lt;br&gt;
+				
+				The groupIndex starts from 1 and if the value is out of bound
+				, the default value 1 will be set and you can get the actual
+				value through the currentIndex variable. &lt;br&gt;
+				
+				For example, if the given value is 2, then the List object
+				will contain the 11th-20th posts from the matched posts
+				when groupSize equals 10.
+				</description>
+      <name>groupIndex</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>
+				Specifies how many posts each group can at most contain. &lt;br&gt;
+				The default value is 10, valid value >= 1.
+			</description>
+      <name>groupSize</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>
+			Specifies how many indexs near the current group index the nearIndexs
+			variable can at most contain. &lt;br&gt;
+
+			If this value is given, tag Handler will put a List object named
+			nearIndexs into the scope, if you do not need the near group indexs,
+			just omit this attribute.
+			</description>
+      <name>nearIndexSize</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+  <tag>
+    <name>info</name>
+    <tag-class>com.fancige.tag.InfoTag</tag-class>
+    <body-content>empty</body-content>
+
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+    </attribute>
+
+    <attribute>
+      <name>param</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <name>var</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <name>scope</name>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>string</name>
+    <tag-class>com.fancige.tag.StringTag</tag-class>
+    <body-content>empty</body-content>
+
+    <attribute>
+      <name>string</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+    </attribute>
+
+    <attribute>
+      <name>param</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <name>var</name>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <name>scope</name>
+    </attribute>
+  </tag>
+</taglib>

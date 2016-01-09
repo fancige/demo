@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fancige社区-登录</title>
+<link rel="stylesheet" type="text/css" href="css/whole.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<script type="text/javascript" src="js/query.js"></script>
+<script type="text/javascript">
+
+	var changeCode = false;
+	function getCode(){
+		
+		get("img.code")[0].src = "vcode?random=" + Math.random();
+	}
+	
+	function displayCode(){
+
+		if(changeCode == true){
+			
+			getCode();
+		}
+		if(get("p.code")[0].style.display == "none"){
+			
+			ajax("GET", "login", true, "", function(text){
+				
+				if(text == "yes"){
+					
+					getCode();
+					changeCode = true;
+					get("div.form")[0].style.height = "300px";
+					get("p.code")[0].style.display = "inherit";
+					get("a.code")[0].onclick = function(){
+						
+						getCode();
+					};
+				}
+			});
+		}
+	}
+	function submit(){
+		
+		var nameOrId = get("input")[0].value;
+		var password = get("input")[1].value;
+		var code = get("input")[2].value;
+
+		get("button.submit")[0].innerHTML = "登录中";
+		ajax("POST", "login", false, "nameOrId=" + nameOrId
+			+ "&password=" + password + "&code=" + code, function(text){
+			
+			switch(text){
+			
+			case "success":
+				location.href = "home.jsp";
+				break;
+				
+			case "failure":
+				
+				get("font.tip")[0].innerHTML = "用户名或密码错误！";
+				break;
+	
+			case "codeError":
+				get("font.tip")[0].innerHTML = "验证码错误！";
+				break;
+			}
+			displayCode();
+			get("button.submit")[0].innerHTML = "登录";
+		});
+	}
+	function load(){
+		
+		get("button.submit")[0].onclick = submit;
+		displayCode();
+	}
+</script>
+</head>
+<body onload="load();">
+	<div class="body">
+		<a class="logo" href="">fancige社区</a>
+		<p class="a">
+			<a href="register.html">注册</a>&nbsp;
+			<a href="home.jsp">个人中心</a>&nbsp;
+		</p>
+		<img src="image/login_d.png" class="bg">
+		<div class="form">
+			<p class="title">用户登录</p>
+			<p>用户名：<input type="text" class="long"></p>
+			<p>&#12288;密码：<input type="password" class="long"></p>
+			<p class="code" style="display: none">验证码：<input type="text" class="short">
+				<img class="code">&nbsp;<a class="code">换一张</a></p>
+			<button class="submit">登录</button><font class="tip"></font>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<!ELEMENT posts (userid,post*)>
+<!ELEMENT userid (#PCDATA)>
+<!ELEMENT post (title,content,time)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+
+<!ATTLIST post id ID #REQUIRED>

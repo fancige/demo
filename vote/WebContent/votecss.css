@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+a{
+	font-size:13pt;text-decoration: none
+}
+a:HOVER {
+	color:green
+}

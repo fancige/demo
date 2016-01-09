@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+html{
+	
+	background-color: #F9FCFF;
+}
+div.body{
+	
+	margin: 0px auto;
+	padding: 30px 50px 50px 50px;
+	width: 1000px;
+}
+a{
+	color: green;
+	text-decoration: none;
+}
+a:HOVER{
+	text-decoration: underline;
+}
+a.logo{
+	
+	font-weight: bold;
+	font-size: 30px;
+	position: absolute;
+	text-decoration: none;
+}
+p.a{
+	
+	text-align: right;
+}
+div.panel{
+	
+	width: 1000px;
+	height: 130px;
+	border: green solid 2px;
+	background-image: url("../image/hua.png");
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+font.panel{
+	
+	font-weight: bold;
+	font-size: 40px;
+	color: green;
+	margin-left: 30px;
+}
+p.panel{
+	
+	font-size: 20px;
+	margin-left: 60px;
+}
+p.Panel a{
+	
+	margin-left: 10px;
+	font-size: 22px;
+}
+div.posts{
+	
+	width: 400px;
+	height: 300px;
+	border: 1px solid green;
+}
+div.title{
+	
+	width: 380px;
+	height: 20px;
+	padding: 5px 10px 5px;
+	border-bottom: green 1px solid;
+	color: white;
+	background-color: green;
+	font-size: 20px;
+	margin-bottom: 40px
+}
+li{
+	margin: 10px 0px;
+}

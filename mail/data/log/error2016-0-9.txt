@@ -1,0 +1,2 @@
+一月 09, 2016 9:01:15 下午 com.fancige.manager.FileManager loadProperties
+严重: java.nio.file.NoSuchFileException: e:\workspace\mail\data\locale\src\com.fancige.mail.Login_en_US.txt

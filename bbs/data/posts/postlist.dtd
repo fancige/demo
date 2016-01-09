@@ -1,0 +1,7 @@
+<!ELEMENT postlist (user*)>
+<!ELEMENT user (normal?,delete?)>
+<!ELEMENT normal (postid*)>
+<!ELEMENT delete (postid*)>
+<!ELEMENT postid (#PCDATA)>
+
+<!ATTLIST user id ID #REQUIRED>

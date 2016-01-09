@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+#edit{
+	
+	height: 700px;
+}
+textarea{
+	
+	margin-left: 50px;
+	font-size: 20px;
+	padding: 5px 5px 5px 5px;
+}
+[type="text"]{
+	
+	margin-left: 50px;
+	width: 500px;
+	height: 30px;
+	font-size: 22px;
+}
+textarea:FOCUS,[type="text"]:FOCUS{
+	
+	border: #2B9CFB 2px solid;
+}
+button{
+	 
+	 position: absolute;
+	 font-size: 16px;
+}
+button:ACTIVE{
+	
+	position: absolute;
+}
+#btn1{
+	
+	margin: 20px 50px;
+}
+#btn1:ACTIVE{
+	
+	margin: 21px 51px;
+}
+#btn2{
+	
+	margin: 20px 160px;
+}
+#btn2:ACTIVE{
+	
+	margin: 21px 161px;
+}

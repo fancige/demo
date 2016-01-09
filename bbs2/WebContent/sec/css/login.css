@@ -1,0 +1,63 @@
+#topPanel {
+	background: green;
+	min-width: 740px;
+	padding: 0px 20px;
+	line-height: 90px;
+}
+
+#topPanel a {
+	text-decoration: none;
+	color: white;
+}
+
+#topPanel a:HOVER {
+	color: yellow;
+}
+
+#panel {
+	width: 780px;
+	height: 405px;
+	border: 2px solid green;
+	background: white;
+	margin: 50px auto 0px auto;
+}
+
+#bg {
+	position: absolute;
+	width: 500px;
+	height: 405px;
+}
+
+#divForm {
+	width: 248px;
+	margin-top: 30px;
+	margin-left: 515px;
+}
+
+#userkey, #password {
+	width: 232px;
+}
+
+#submit {
+	width: 248px;
+}
+
+#title {
+	color: green;
+	font-size: 26px;
+	font-weight: bold;
+	text-align: center;
+}
+
+form div {
+	margin-top: 15px;
+}
+
+#verificode {
+	width: 80px;
+}
+
+#imgCode {
+	position: absolute;
+	margin-left: 20px;
+}

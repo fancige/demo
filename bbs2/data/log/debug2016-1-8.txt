@@ -1,0 +1,280 @@
+一月 08, 2016 7:29:40 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 7:29:40 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 7:36:02 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 7:36:02 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 7:36:03 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 7:36:03 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 7:42:53 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 7:42:53 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 7:42:54 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 7:42:54 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 7:43:34 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 7:43:34 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 7:43:35 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 7:43:35 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:02:16 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:02:16 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:02:17 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:02:17 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:03:29 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:03:29 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:03:30 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:03:30 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:18:40 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:18:40 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:18:41 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:18:41 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:21:04 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:21:04 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:21:04 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:21:04 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:22:57 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:22:57 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:22:57 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:22:57 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:25:58 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:25:58 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:26:40 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:26:40 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:26:40 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:26:40 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:27:52 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:27:52 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:27:53 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:27:53 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 8:29:44 上午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 8:29:45 上午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 8:29:49 上午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 8:29:49 上午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 9:46:57 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 9:46:57 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:20:10 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:20:10 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:20:11 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:20:11 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:20:42 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:20:42 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:20:42 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:20:42 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:21:44 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:21:44 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:21:44 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:21:44 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:22:25 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:22:25 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:22:25 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:22:25 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:22:56 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:22:56 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:22:57 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:22:57 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:24:08 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:24:08 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:24:09 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:24:09 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:29:25 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:29:25 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:29:25 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:29:25 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:30:26 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:30:26 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:30:27 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:30:27 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:33:00 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:33:00 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:33:01 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:33:01 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:33:31 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:33:31 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:33:32 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:33:32 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:38:38 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:38:38 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:38:39 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:38:39 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:40:01 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:40:01 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:40:01 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:40:01 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:41:23 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:41:23 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:41:24 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:41:24 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:43:08 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:43:08 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:45:33 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:45:33 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:45:33 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:45:33 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:45:54 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:45:54 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:45:54 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:45:54 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:47:36 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:47:36 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:47:37 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:47:37 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:49:09 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:49:09 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:49:10 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:49:10 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:56:22 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:56:22 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:56:23 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:56:23 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:57:04 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:57:04 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:57:05 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:57:05 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:57:45 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:57:45 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:57:46 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:57:46 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 10:58:28 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 10:58:28 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 10:58:28 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 10:58:28 下午 com.fancige.filter.GlobalFilter init
+信息: ok
+一月 08, 2016 11:08:32 下午 com.fancige.filter.SecFilter destroy
+信息: ok
+一月 08, 2016 11:08:32 下午 com.fancige.filter.GlobalFilter destroy
+信息: ok
+一月 08, 2016 11:08:34 下午 com.fancige.filter.SecFilter init
+信息: ok
+一月 08, 2016 11:08:34 下午 com.fancige.filter.GlobalFilter init
+信息: ok

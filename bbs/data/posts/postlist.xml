@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE postlist SYSTEM "postlist.dtd">
+<postlist>
+	<user id="_111111">
+		<normal>
+			<postid>1234567890</postid>
+		</normal>
+		<delete>
+			<postid>1234567891</postid>
+		</delete>
+	</user>
+</postlist>

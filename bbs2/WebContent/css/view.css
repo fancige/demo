@@ -1,0 +1,28 @@
+#forumCatalog #homepage {
+	color: white;
+	background: green;
+}
+
+#contentBody {
+	padding: 30px 30px 30px 30px;
+	width: 700px;
+	margin-top: 50px;
+	background-color: white;
+}
+
+#title {
+	text-align: center;
+	font-weight: bolder;
+	font-size: large;
+}
+
+#publish {
+	text-align: center;
+	font-size: medium;
+}
+
+#content {
+	margin-top: 20px;
+	line-height: 200%;
+	text-indent: 2em;
+}

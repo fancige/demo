@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<questions>
+
+  <question id="1" type="single">
+    <title>1.（单选）你对web课程理解程度怎样？</title>
+    <option count="0">A.理解</option>
+    <option count="0">B.不理解</option>
+    <option count="0">C.说不清</option>
+  </question>
+
+  <question id="2" type="more">
+    <title>2.（多选）你爱好的运动有？</title>
+    <option count="0">A.足球</option>
+    <option count="0">B.篮球</option>
+    <option count="0">C.排球</option>
+  </question>
+
+  <question id="3" type="more">
+    <title>3.（多选）你喜欢什么语言的音乐？</title>
+    <option count="0">A.国语</option>
+    <option count="0">B.粤语</option>
+    <option count="0">C.英语</option>
+    <option count="1">D.日语</option>
+  </question>
+</questions>

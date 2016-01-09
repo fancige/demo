@@ -1,0 +1,24 @@
+<!ELEMENT root (component*)>
+<!ELEMENT component (class, var, insets?, rectangle?, color?)>
+
+<!ELEMENT class (#PCDATA)>
+<!ELEMENT var (#PCDATA)>
+
+<!ELEMENT insets (top, left, bottom, right)>
+<!ELEMENT top (#PCDATA)>
+<!ELEMENT left (#PCDATA)>
+<!ELEMENT bottom (#PCDATA)>
+<!ELEMENT right (#PCDATA)>
+
+<!ELEMENT rectangle (x, y, width, height)>
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+
+<!ELEMENT color (background?, focus?)>
+<!ELEMENT background (red, green, blue)>
+<!ELEMENT focus (red, green, blue)>
+<!ELEMENT red (#PCDATA)>
+<!ELEMENT green (#PCDATA)>
+<!ELEMENT blue (#PCDATA)>

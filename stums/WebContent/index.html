@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<script type="text/javascript" src="index.js"></script>
+<style type="text/css">
+table, tr, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+button {
+	background: white;
+	border: 1px black solid;
+	height: 28px;
+	outline: none;
+}
+
+button:HOVER {
+	color: white;
+	background: black;
+}
+
+#body {
+	margin-left: 30px;
+}
+
+.page {
+	display: none;
+}
+
+.hello {
+	font-size: 20px;
+}
+
+#divLogin input {
+	padding: 5px;
+	width: 200px;
+}
+
+#divAdmin button {
+	margin-left: 10px;
+}
+
+.page div {
+	margin-top: 20px;
+}
+
+#stuMenu {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 35px;
+}
+
+#stuMenu button {
+	float: left;
+	border: none;
+	width: 100px;
+	height: 35px;
+}
+
+#stuPanel {
+	margin-top: 40px;
+}
+
+#stuPanel input {
+	padding: 5px;
+	width: 200px;
+}
+</style>
+<title>学生管理系统</title>
+</head>
+<body>
+	<div id="body">
+		<h1>学生管理系统</h1>
+		<div id="loginPage" class="page">
+			<h3>你好，请登录</h3>
+			<form id="formLogin">
+				<p>
+					<input type="text" id="username" placeholder="用户">
+				</p>
+				<p>
+					<input type="password" id="password" placeholder="密码">
+				</p>
+				<p>
+					<button type="submit" id="btnSubmit">登陆</button>
+				</p>
+			</form>
+		</div>
+		<div id="adminPage" class="page">
+			<p>
+				<b class="hello">你好，管理员</b>
+			</p>
+			<p>
+				<b>说明：</b>编辑时点击行号可以择是否删除该条记录，双击则移除该行，移除的数据不保存
+			</p>
+			<div>
+				<b>选择表：</b> <select id="selectTable">
+				</select>
+				<button id="view">查看</button>
+				<button id="edit">编辑</button>
+				<button id="submit">保存</button>
+				<button class="exit">退出</button>
+			</div>
+		</div>
+		<div id="studentPage" class="page">
+			<p>
+				<b class="hello">你好，学生！</b>
+				<button class="exit">退出</button>
+			</p>
+			<div id="stuMenu">
+				<button>个人信息</button>
+				<button>找学</button>
+				<button>查成</button>
+			</div>
+			<div id="stuPanel">
+				<div></div>
+				<div>
+					<input type="text" placeholder="输入学生信息"> <select></select>
+					<p>
+						<button>找学</button>
+					</p>
+				</div>
+				<div>
+					<input type="text" placeholder="输入课程名称">
+					<p>
+						<button>查找</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="teacherPage" class="page">
+			<p>
+				<b class="hello">你好，老师</b>
+				<button class="exit">退出</button>
+			</p>
+		</div>
+		<div id="resultPanel" style="margin-top: 30px"></div>
+	</div>
+</body>
+</html>

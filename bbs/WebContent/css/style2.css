@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+html{
+	
+	background-color: #F9FCFF;
+
+}
+div.body{
+	
+	margin: 0px auto;
+	padding: 0px 50px 50px 50px;
+	width: 1000px;
+	height: 1000px;
+}
+.logo{
+	
+	font-size: 40px;
+	border-style: none;
+	font-weight: bold;
+	margin-right: 550px;
+	color: green;
+}
+#main{
+	
+	
+	width: 780px;
+	height: 800px;
+	background: white;
+	padding: 3px 5px 3px 5px;
+}
+#dir{
+	
+	width: 1000px;
+	height: 50px;
+	border-top: solid 2px green;
+	border-bottom: solid 2px green;
+}
+#dir div{
+	
+	color: green;
+	text-align: center;
+	height: 20px;
+	width: 70px;
+	padding: 15px 15px 15px 15px;
+	float: left;
+	cursor: pointer;
+}
+#dir div:HOVER{
+	
+	color: white;
+	background-color: green;
+}
+#main div{
+	
+	width: 760px;
+	height: 60px;
+	border-bottom: 1px dashed rgb(0, 128, 0);
+	padding: 10px 10px;
+}
+#main div:hover{
+	
+	background: #F9FCFF;
+}
+label:HOVER{
+	
+	cursor: pointer;
+}
+a{
+	text-decoration: none;
+	color: green;
+}
+a:HOVER{
+	
+	text-decoration: underline;
+}

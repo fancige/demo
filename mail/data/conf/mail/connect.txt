@@ -1,0 +1,2 @@
+﻿###############
+outlook.com.imap.host=imap-mail.outlook.com

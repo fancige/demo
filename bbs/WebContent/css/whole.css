@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+a{
+	color: blue;
+	text-decoration: none;
+}
+a:HOVER{
+	text-decoration: underline;
+}
+button{
+	
+	width: 80px;
+	height: 35px;
+	border: #2B9CFB 2px solid;
+	background-color: white;
+	color: #2B9CFB;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0px 1px 0px 1px;
+}
+button:HOVER{
+	
+	background-color: #E0F0F8;
+}

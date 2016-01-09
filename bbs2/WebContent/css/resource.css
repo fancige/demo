@@ -1,0 +1,28 @@
+#forumCatalog #resource {
+	color: white;
+	background: green;
+}
+
+.pFile input {
+	width: 300px;
+}
+
+.pFile button {
+	margin-left: 10px;
+}
+
+#divList {
+	margin-bottom: 40px;
+}
+
+#divList a {
+	color: black;
+}
+
+#divList a:HOVER {
+	text-decoration: underline;
+}
+
+#divList a:VISITED {
+	color: gray;
+}

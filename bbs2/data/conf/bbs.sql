@@ -1,0 +1,32 @@
+CREATE DATABASE bbs;
+
+USE bbs;
+
+CREATE TABLE userlist (
+	userid INT UNSIGNED AUTO_INCREMENT, 
+	username CHAR(10), 
+	password CHAR(20),
+	loginID CHAR(32),
+	loginKey CHAR(32),
+	PRIMARY KEY (userid),
+	UNIQUE KEY (loginID)
+) AUTO_INCREMENT=10000;
+
+CREATE TABLE post (
+	postid INT UNSIGNED AUTO_INCREMENT, 
+	userid INT UNSIGNED,
+	title VARCHAR(50),
+	content TEXT,
+	publish TIMESTAMP NULL,
+	Modify TIMESTAMP NULL,
+	PRIMARY KEY (postid),
+	FOREIGN KEY (userid) REFERENCES userlist(userid) ON UPDATE CASCADE ON DELETE CASCADE
+) AUTO_INCREMENT=10000;
+
+CREATE TABLE user (
+	userid INT UNSIGNED,
+	sex CHAR(1), 
+	registerTime TIMESTAMP NULL, 
+	birth DATE,
+	FOREIGN KEY (userid) REFERENCES userlist(userid) ON UPDATE CASCADE ON DELETE CASCADE
+);

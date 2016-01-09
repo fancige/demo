@@ -1,0 +1,5 @@
+<!ELEMENT userlist (user*)>
+<!ELEMENT user (userid, username, password)>
+<!ELEMENT userid (#PCDATA)>
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT password (#PCDATA)>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/global.css">
+<link rel="stylesheet" type="text/css" href="css/register.css">
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/css.js"></script>
+<script type="text/javascript" src="../js/compat.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<title>注册</title>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="dialog">
+    <div style="font-size: xx-large; color: green;">
+      <b>注册成功！</b>
+    </div>
+    <p>
+      你的用户ID：<b id="userid"></b>
+    </p>
+    <p>请务必牢记你的用户ID和密码，进入个人中心后及时补全资料。</p>
+    <p>点击“确定”跳转到个人中心。</p>
+    <div style="margin-top: 30px;">
+      <a href="user/home.jsp">确定</a>
+    </div>
+  </div>
+
+  <div id="topPanel">
+    <div style="position: absolute;">
+      <a href="../forum.jsp" style="font-size: 60px;">fancige</a>
+    </div>
+    <div style="text-align: right;">
+      <a href="user/home.jsp">个人中心</a> <a href="login.jsp">登录</a>
+    </div>
+  </div>
+  <div id="form">
+    <div id="tipPanel">注册时只需填写密码，注册成功后系统会为你分配一个id用于登录。</div>
+    <div id="formTitle">注册</div>
+    <form>
+      <div>
+        密码：<input type="password" id="password">
+      </div>
+      <div>
+        确认密码：<input type="password" id="repassword">
+      </div>
+      <div>
+        验证码：<input type="text" id="verificode"> <img src="../verificode" id="imgcode">
+      </div>
+      <div>
+        <button type="submit" id="submit">注册</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

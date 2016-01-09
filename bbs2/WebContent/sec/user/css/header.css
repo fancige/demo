@@ -1,0 +1,16 @@
+#topPanel {
+	max-width: 1000px;
+	min-width: 600px;
+	margin: auto;
+	background: green;
+}
+
+#topPanel a {
+	color: white;
+	text-decoration: none;
+	line-height: 40px;
+}
+
+#topPanel a:HOVER {
+	color: yellow;
+}

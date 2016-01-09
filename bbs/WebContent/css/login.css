@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+html{
+	
+	background-image: url("../image/bg-header.png");
+	background-repeat: repeat-x;
+}
+div.body{
+	
+	margin: 0px auto;
+	padding: 30px 50px 50px 50px;
+	width: 900px;
+}
+a.logo{
+	
+	font-size: 40px;
+	font-weight: bold;
+	position: absolute;
+	color: #2B9CFB;
+	text-decoration: none;
+}
+a.logo:HOVER{
+	
+	cursor: pointer;
+}
+p.title{
+	
+	font-size: 22px;
+	color:  #2B9CFB;
+}
+p.a{
+	
+	margin-bottom: 80px;
+	text-align: right;
+}
+div.form{
+	
+	width: 400px;
+	height: 230px;
+	border: #2B9CFB 2px solid;
+	padding: 0px 60px;
+	background: white;
+}
+input.long{
+	
+	height: 30px;
+	font-size: 20px;
+	width: 300px;
+}
+input.short{
+	
+	height: 30px;
+	font-size: 20px;
+	width: 100px;
+}
+input:FOCUS{
+	
+	border: #2B9CFB 2px solid;
+}
+img.bg{
+	
+	margin-left: 400px;
+	position: absolute;
+}
+button.submit{
+	
+	margin-left: 70px;
+}
+font.tip{
+	
+	color: red;
+	margin-left: 30px;
+}

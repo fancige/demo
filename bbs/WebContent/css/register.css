@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+html{
+	
+	background-image: url("../image/bg-header.png");
+	background-repeat: repeat-x;
+}
+div.body{
+	
+	margin: 0px auto;
+	padding: 30px 50px 50px 50px;
+	height: 520px;
+	width: 900px;
+}
+div.panel{
+
+	padding-left: 60px;
+	border: #2B9CFB 2px solid;
+	height: 400px;
+	width: 650px;
+	background-color: white;
+}
+a.logo{
+	
+	font-size: 40px;
+	font-weight: bold;
+	position: absolute;
+	color: #2B9CFB;
+	text-decoration: none;
+}
+a.logo:HOVER{
+	
+	cursor: pointer;
+}
+p.logo{
+	
+	font-size: 22px;
+	font-weight: bold;
+	color: #2B9CFB;
+}
+p.a{
+	
+	margin-bottom: 80px;
+	text-align: right;
+}
+button#submit{
+	
+	margin-left: 80px;
+}
+button#ok, button#no{
+	
+	margin-left: 30px;
+}
+
+input.long{
+	
+	height: 30px;
+	font-size: 18px;
+	width: 300px;
+}
+input.short{
+	
+	height: 30px;
+	font-size: 18px;
+	width: 120px;
+}
+input:FOCUS{
+	
+	border: solid 2px #2B9CFB;
+}
+div.tip{
+	
+	font-size: 13px;
+	margin-left: 400px;
+	position: absolute;
+}
+div#dg{
+	
+	padding: 30px 50px 50px 50px;
+	margin: 125px 250px;
+	position: absolute;
+	z-index: 2;
+	height: 230px;
+	width: 300px;
+	border: #2B9CFB solid 2px;
+	background-color: white;
+	display: none;
+}
+div#bg{
+	
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: fixed;
+	background-color: black;
+	filter: alpha(Opacity=20);
+    opacity :0.2;
+    display: none;
+}
+font#f1{
+	
+	font-size: 30px;
+	font-style: italic;
+	color: green;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE posts SYSTEM "post.dtd">
+<posts>
+	<userid>111111</userid>
+	<post id="_1234567890">
+		<title>no title</title>
+		<content>no content</content>
+		<time>2014-3-3</time>
+	</post>
+	<post id="_1234567891">
+		<title>no title</title>
+		<content>no content</content>
+		<time>2014-3-3</time>
+	</post>
+	<post id="_1234567892">
+		<title>no title</title>
+		<content>no content</content>
+		<time>2014-3-3</time>
+	</post>
+</posts>
