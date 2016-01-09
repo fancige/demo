@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="input_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="umar-a uba bc-border">
+            <div class="ub ub-ac umh5 bc-border ">
+                <div class=" uinput ub ub-f1">
+                    <div class="uinn fa fa-lock sc-text"></div>
+                    <input placeholder="请输入金额" type="text" class="umw4 ub-f1">
+                </div>
+            </div>
+        </div>
+        <div class="ub umar-a">
+            <div class="ub ub-ac ulev-1 umar-a">
+                <div class="radiobox" name="">
+                    <input type="radio" checked class="ub-con" name="lv_radio">
+                </div>
+                <div >
+                    收入
+                </div>
+            </div>
+            <div class="ub ub-ac ulev-1 umar-a">
+                <div class="radiobox" name="">
+                    <input type="radio" class="ub-con" name="lv_radio">
+                </div>
+                <div>
+                    支出
+                </div>
+            </div>
+        </div>
+        <div class="uinn">
+            <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1"  id="submit">
+                <div class="uinn3 fa fa-shield umh1 umw1"></div>
+                保存
+            </div>
+        </div>
+        <button type="submit"class="uinvisible"></button>
+
+        <div id="hint" class="ub ub-ac ub-pc ulev-1"></div>
+
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+
+        $("#submit").on('click', save);
+
+        $("input").eq(0).on("focus", function() {
+            $("#hint").html("整数最多10位，小数最多2位");
+        });
+
+        function save() {
+            var ins = $("input");
+            var money = ins.eq(0).val();
+            if (/^\d{1,10}\.\d{1,2}$/.test(money) || /^\d{1,10}$/.test(money)) {
+                var type = ins.eq(1).attr("checked") ? "income" : "outlay";
+                var items = appcan.locStorage.val("#local") || "[]";
+                items = JSON.parse(items);
+                var d = new Date();
+                var item = {
+                    "id" : "L" + d.getTime(),
+                    "type" : type,
+                    "money" : money,
+                    "date" : d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate()
+                }
+                items.push(item);
+                appcan.locStorage.val("#local", JSON.stringify(items));
+                $("#hint").html("已保存");
+                $("input").val("");
+            } else {
+                $("#hint").html("金额无效");
+            }
+        }
+
+    </script>
+</html>

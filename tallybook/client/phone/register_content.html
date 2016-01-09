@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="register_content/css/main.css">
+        <script type="text/javascript" src="js/tallybook.js"></script>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver uinn-a1">
+            <div class="ub ub-ac ub-pc ulev-1 uinn" id="hint"></div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+                <div class="ulev-app1 umw4">
+                    邮箱
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input type="text" class="ub-f1" id="mail">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1">
+                <div class="ulev-app1 umw4">
+                    用户名
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input type="text" class="ub-f1" id="user">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1">
+                <div class="ulev-app1 umw4">
+                    密码
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input type="password" class="ub-f1" id="pw">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1">
+                <div class="ulev-app1 umw4">
+                    确认密码
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input type="password" class="ub-f1" id="rpw">
+                    </div>
+                </div>
+            </div>
+            <div class="ub ub-ver">
+                <div class="uinn-at1">
+                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn"  id="submit">
+                        注册
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        });
+
+        $("#mail").on("focus", function() {
+            $("#hint").html("邮箱用于账号激活，登录，密码找回等，请使用邮箱名只包含字母、数字、下划线的邮箱");
+        });
+
+        $("#user").on("focus", function() {
+            $("#hint").html("用户名可含字母、数字。不区分大小写，6-20字符，必须字母开头");
+        });
+
+        $("#pw").on("focus", function() {
+            $("#hint").html("密码可含字母、数字，区分大小写，6-30字符");
+        });
+
+        $("#rpw").on("focus", function() {
+            $("#hint").html("");
+        });
+
+        $("input").on("blur", function() {
+            $("#hint").html("");
+        });
+
+        $("input").on("focus", function() {
+            $("#hint").removeClass("c-red");
+        });
+
+        var enable = true;
+        $("#submit").on("click", function() {
+            if (enable) {
+                var mail = $("#mail").val();
+                var user = $("#user").val();
+                var pw = $("#pw").val();
+                var rpw = $("#rpw").val();
+                $("#hint").addClass("c-red");
+                if (!mail) {
+                    $("#hint").html("邮箱不能为空");
+                } else if (!/^\w+@[a-z0-9-\.]+$/i.test(mail)) {
+                    $("#hint").html("邮箱格式不合要求");
+                } else if (mail.length > 50) {
+                    $("#hint").html("请不要使用长度超过50个字符的邮箱");
+                } else if (!user) {
+                    $("#hint").html("用户名不能为空");
+                } else if (user.length < 6 || user.length > 20) {
+                    $("#hint").html("用户名长度需在6-20之间");
+                } else if (/[^0-9a-z]/i.test(user)) {
+                    $("#hint").html("用户名只能包含字母和数字");
+                } else if (!/^[a-z]/i.test(user)) {
+                    $("#hint").html("用户名只能字母开头");
+                } else if (!pw) {
+                    $("#hint").html("密码不能为空");
+                } else if (pw.length < 6 || pw.length > 30) {
+                    $("#hint").html("密码长度需在6-30之间");
+                } else if (/[^0-9a-z]/i.test(pw)) {
+                    $("#hint").html("密码只能包含字母和数字");
+                } else if (pw != rpw) {
+                    $("#hint").html("两次密码不相同");
+                } else {
+                    enable = false;
+                    $("#submit").html("请稍后...");
+                    var data = {
+                        email : mail,
+                        username : user,
+                        password : pw
+                    };
+                    var url = host + "hybrid/registerAuth.php"
+                    $.ajax({
+                        type : "POST",
+                        url : url,
+                        data : data,
+                        timeout : 8000,
+                        dataType : "json",
+                        success : function(json) {
+                            if (json["result"]) {
+                                $("input").val("");
+                                alert(json["msg"]);
+                                appcan.window.open({
+                                    name : "login",
+                                    data : "login.html",
+                                    dataType : 0,
+                                });
+                            } else {
+                                $("#hint").addClass("c-red");
+                                $("#hint").html(json["msg"]);
+                            }
+                        },
+                        error : function(xhr, type) {
+                            $("#hint").addClass("c-red");
+                            if (type == "timeout") {
+                                $("#hint").html("连接服务器超时");
+                            } else {
+                                $("#hint").html("服务器错误");
+                            }
+                        },
+                        complete : function() {
+                            enable = true;
+                            $("#submit").html("注册");
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,82 @@
+.uinn-ca1{
+	padding:0.9em 1em 0.8em 1em;
+}
+.b-gra-ae{
+	border-color:#aeaeae;
+}
+.c-gra-ae{
+	background-color:#aeaeae;
+}
+.uwh-ca1{
+	width:1.21875em;
+	height:2.4375em;
+}
+.uabs-ca{
+	position:absolute;
+	right:0;
+	top:40%;
+}
+
+/*******
+ * 
+ */
+
+.t-gra-book {
+    color: #4b4b4b;
+}
+.uinnh5 {
+    padding: 0.8em 0.5em;
+    margin: 0;
+}
+.b-gra-pop {
+    border-color: #a4a4a4;
+}
+.c-red-pop {
+    background-color: #D13434;
+}
+.t-gra {
+    color: gray;
+}
+.btn {
+    font-size: 1em;
+    text-align: center;
+}
+
+.c-org {
+    color: #FC7800;
+}
+
+#pop {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+/******
+ * 
+ */
+.ttl {
+    height: 1.4em;
+    width: 100%;
+}
+.ttl:nth-child(2) {
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    color: white;
+}
+
+.income, .outlay {
+    font-size: 0.8em;
+}
+
+.income {
+    color : green;
+}
+
+.outlay {
+    color: red;
+}

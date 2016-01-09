@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="login_content/css/main.css">
+        <script type="text/javascript" src="js/tallybook.js"></script>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver uinn-a3 ub-fv">
+            <div class="ub ub-ver uinn uinn-at1">
+                <div class="ub ub-ac ub-pc ulev-1 uinn c-red" id="hint"></div>
+                <div class="umar-a uba bc-border c-wh">
+                    <div class="ub ub-ac ubb umh5 bc-border ">
+                        <div class=" uinput ub ub-f1">
+                            <div class="uinn fa fa-user sc-text"></div>
+                            <input placeholder="用户名/邮箱" type="text" class="ub-f1" id="key">
+                        </div>
+                    </div>
+                    <div class="ub ub-ac umh5 bc-border ">
+                        <div class=" uinput ub ub-f1">
+                            <div class="uinn fa fa-lock sc-text"></div>
+                            <input placeholder="密码" type="password" class="umw4 ub-f1" id="pw">
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-ver">
+                    <div class="uinn-at1">
+                        <div class="btn ub ub-ac bc-text-head ub-pc bc-btn uc-a1" id="submit">
+                            登录
+                        </div>
+                    </div>
+                    <div class="uinn-at2 ub sc-text-active ulev-4">
+                        <div class="ub-f1" id="regBtn">
+                            立即注册
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"class="uinvisible"></button>
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            var msg = location.search.replace("?", "");
+            if (msg) {
+                hint(decodeURI(msg));
+            }
+        });
+
+        $("input").on("focus", function() {
+            $("#hint").html("");
+        });
+
+        $("#regBtn").on("click", function() {
+            appcan.window.open({
+                name : "register",
+                data : "register.html",
+                dataType : 0
+            });
+        });
+
+        var enable = true;
+        appcan.button("#submit", "btn-act", function() {
+            if (enable) {
+                var key = $("#key").val();
+                var pw = $("#pw").val();
+                if (!key || !pw) {
+                    $("#hint").html("账号密码不能为空");
+                } else {
+                    enable = false;
+                    $("#submit").html("请稍后...");
+                    var data = {
+                        key : key,
+                        password : pw
+                    };
+                    var url = host + "hybrid/loginAuth.php"
+                    $.ajax({
+                        type : "POST",
+                        url : url,
+                        data : data,
+                        timeout : 8000,
+                        dataType : "json",
+                        success : function(json) {
+                            if (json["result"]) {
+                                appcan.locStorage.val("appid", json["appid"]);
+                                appcan.locStorage.val("userid", json["userid"]);
+                                $("input").val("");
+                                appcan.window.open({
+                                    name : "index",
+                                    data : "index.html?sync",
+                                    dataType : 0
+                                });
+                            } else {
+                                $("#hint").html(json["msg"]);
+                            }
+                        },
+                        error : function(xhr, type) {
+                            if (type == "timeout") {
+                                $("#hint").html("连接服务器超时");
+                            } else {
+                                $("#hint").html("服务器错误");
+                            }
+                        },
+                        complete : function() {
+                            enable = true;
+                            $("#submit").html("登录");
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</html>

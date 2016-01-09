@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="index_content/css/main.css">
+        <script type="text/javascript" src="js/tallybook.js"></script>
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ttl ulev-1"></div>
+        <div class="ub sc-btn ub-ac ulev-1 ttl">
+            <div class="ub-f1 tx-r">
+                收入：
+            </div>
+            <div class="ub-f2 tx-l" id="income">
+                0
+            </div>
+            <div class="ub-f1 tx-r">
+                支出：
+            </div>
+            <div class="ub-f2 tx-l" id="outlay">
+                0
+            </div>
+        </div>
+
+        <div class="ub ub-ver" id="listview"></div>
+
+        <div style="display: none;">
+            <div class="ub ub-ae" id="pop">
+                <div class="bc-bg ub-ver ub-fh" >
+                    <div class="c-wh uinn ub-ver ub-f1">
+                        <div class="ub-f1 umar-a">
+                            <div class="t-gra-book tx-c uelv-1" id="pop_ttl"></div>
+                        </div>
+                        <div class="ub-f1 umar-a">
+                            <div class="btn ub ub-ac bc-text-head ub-pc c-red-pop uc-a1" id="pop_del">
+                                删除所选记录
+                            </div>
+                        </div>
+                        <div class="ub-f1 umar-a">
+                            <div class="btn uba ub ub-ac ub-pc b-gra-pop uc-a1 sc-text" id="pop_cancel">
+                                取 消
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    <script>
+        function toLogin(msg) {
+            appcan.window.open({
+                name : "login",
+                data : "login.html?" + encodeURI(msg),
+                dataType : 0
+            });
+        }
+
+        function sync() {
+            var appid = appcan.locStorage.val("appid");
+            var userid = appcan.locStorage.val("userid");
+            if (!userid || !appid) {
+                toLogin("请先登录");
+            } else {
+                hint("正在同步...", 8000);
+                var url = host + "hybrid/billservice.php";
+                var data = {
+                    appid : appid,
+                    userid : userid,
+                    type : "sync",
+                };
+                var add = appcan.locStorage.val("#local");
+                if (add) {
+                    add = add.replace(/L/g, "");
+                    data["add"] = add;
+                }
+                var del = appcan.locStorage.val("#delete");
+                if (del) {
+                    data["delete"] = del;
+                }
+                $.ajax({
+                    type : "POST",
+                    url : url,
+                    data : data,
+                    dataType : "json",
+                    timeout : 8000,
+                    success : function(json) {
+                        if (json["result"]) {
+                            var msgs = ["同步完成"];
+                            if (json["get_result"]) {
+                                appcan.locStorage.val("#remote", json["get_data"]);
+                            } else {
+                                msgs.push(json["get_msg"]);
+                            }
+                            if (add) {
+                                if (json["add_result"]) {
+                                    appcan.locStorage.val("#local", "");
+                                } else {
+                                    msgs.push(json["add_msg"]);
+                                }
+                            }
+                            if (del) {
+                                if (json["delete_result"]) {
+                                    appcan.locStorage.val("#delete", "");
+                                } else {
+                                    var ids = JSON.parse(appcan.locStorage.val("#delete"));
+                                    for (var i = 0; i < ids.length; i++) {
+                                        deleteItem(ids[i]);
+                                    }
+                                    msgs.push(json["delete_msg"]);
+                                }
+                            }
+                            for (var i = 0; i < msgs.length; i++) {
+                                hint(msgs[i], 1000, i * 1200);
+                            }
+                            display();
+                        } else if (!json["login_result"]) {
+                            toLogin(json["login_msg"]);
+                        } else {
+                            hint(json["msg"]);
+                        }
+                    },
+                    error : function(xhr, type) {
+                        if (type == "timeout") {
+                            hint("连接服务器超时");
+                        } else {
+                            hint("服务器错误");
+                        }
+                    }
+                });
+            }
+        }
+
+        function deleteItem(id) {
+            var locName = "#remote";
+            if (/^L/.test(id)) {
+                locName = "#local";
+            }
+            var data = appcan.locStorage.val(locName) || "[]";
+            data = JSON.parse(data);
+            for (var i in data) {
+                if (data[i].id == id) {
+                    data.splice(i, 1);
+                    if (locName == "#remote") {
+                        var del = appcan.locStorage.val("#delete") || "[]";
+                        del = JSON.parse(del);
+                        del.push(id);
+                        appcan.locStorage.val("#delete", JSON.stringify(del));
+                    }
+                    if (data.length) {
+                        appcan.locStorage.val(locName, JSON.stringify(data));
+                    } else {
+                        appcan.locStorage.val(locName, "");
+                    }
+                    break;
+                }
+            }
+        }
+
+        function display() {
+            var lv = appcan.listview({
+                selector : "#listview",
+                type : "thinLineTmp",
+                hasIcon : false,
+                hasAngle : false,
+                hasSubTitle : false
+            });
+            var income = 0;
+            var outlay = 0;
+            var data = [];
+            var p = '<div class="ub ?"><div class="ub-f1">?</div><div class="ub-f1">?</div><div class="ub-f2 tx-c">?</div><div class="ub-f2 tx-r c-blu">?</div></div>';
+            var items = [];
+            var local = appcan.locStorage.val("#local");
+            if (local) {
+                items = items.concat(JSON.parse(local));
+            }
+            var remote = appcan.locStorage.val("#remote");
+            if (remote) {
+                items = items.concat(JSON.parse(remote));
+            }
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+                if (item["type"] == "income") {
+                    income += parseFloat(item.money);
+                } else {
+                    outlay += parseFloat(item.money);
+                }
+                var title = p.replace("?", item["type"]).replace("?", i + 1).replace("?", item["type"] == "income" ? "收入" : "支出").replace("?", item["money"]).replace("?", item["date"]);
+                if (!/^L/.test(item.id)) {
+                    title = title.replace(" c-blu", "");
+                }
+                data.push({
+                    title : title,
+                    id : item["id"],
+                    index : i + 1
+                });
+            }
+            $("#income").html(Math.round(income * 100) / 100);
+            $("#outlay").html(Math.round(outlay * 100) / 100);
+            lv.set(data);
+            lv.on('click', function(ele, context, obj, subobj) {
+                $("#pop_ttl").html("确定删除序号为" + context["index"] + "的记录？");
+                $("#pop_del").on("click", function() {
+                    deleteItem(context.id);
+                    $("#pop").parent().css("display", "none");
+                    display();
+                });
+                $("#pop").parent().css("display", "block");
+            });
+
+            $("#pop_cancel").on("click", function() {
+                $("#pop").parent().css("display", "none");
+            });
+        }
+
+
+        appcan.ready(function() {
+            appcan.initBounce();
+            if (location.search == "?sync") {
+                sync();
+            } else {
+                display();
+            }
+        });
+    </script>
+</html>
