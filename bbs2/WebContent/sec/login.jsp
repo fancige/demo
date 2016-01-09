@@ -1,6 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<fmt:setLocale value="en_US" />
+<%-- <fmt:setLocale value="en_US" /> --%>
 <fmt:bundle basename="com.fancige.locale.Login">
   <!DOCTYPE html>
   <html>
