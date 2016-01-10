@@ -230,7 +230,7 @@ function createEmptyTable(tableName, editable, callback) {
 			tr = crt("tr");
 			td = crt("td");
 			td.innerHTML = "+";
-			td.title = "点击添加一条记录;
+			td.title = "点击添加一条记录";
 			td.className = "btnAdd";
 			td.style.cursor = "pointer";
 			td.onclick = function() {
