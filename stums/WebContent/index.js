@@ -144,7 +144,7 @@ function appendRow(table, data) {
 	td.className = rowIndex;
 	td.id = rowIndex;
 	if (editable) {
-		td.title = "单击标记是否删除该条记录，双击移除该记录";
+		td.title = "单击标记该条记录待删除，双击移除该记录";
 		td.style.cursor = "pointer";
 		td.onmouseover = function() {
 			this.innerHTML = this.className == "X" ? rowIndex : "X";
@@ -230,7 +230,7 @@ function createEmptyTable(tableName, editable, callback) {
 			tr = crt("tr");
 			td = crt("td");
 			td.innerHTML = "+";
-			td.title = "点击添加�?�?";
+			td.title = "点击添加一条记录;
 			td.className = "btnAdd";
 			td.style.cursor = "pointer";
 			td.onclick = function() {
